@@ -1,0 +1,12 @@
+image:
+    file: .gitpod.Dockerfile
+
+tasks:
+  - name: pluseAudio
+    init: pulseaudio --start
+  
+ports:
+  - name: vncStart
+    port: 6080
+    onOpen: open-preview
+
