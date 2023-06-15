@@ -1,5 +1,4 @@
 # gitpod-GUI
 Gitpod environment for GUI application testing with speaker and microphone feature using vnc + pulseaudio
 
-open in Gitpod
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#github.com/hachimetsu/gitpod-GUI)
