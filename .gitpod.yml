@@ -6,7 +6,7 @@ tasks:
     init: pulseaudio --start
   
 ports:
-  - name: vncStart
+  - name: vncServer
     port: 6080
     onOpen: open-preview
 
