@@ -32,9 +32,6 @@ RUN apt-get install -y \
   fonts-noto \
   fonts-noto-cjk
 
-# For Qt WebEngine on Docker
-ENV QTWEBENGINE_DISABLE_SANDBOX 1
-
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y pulseaudio
     
