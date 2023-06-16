@@ -3,10 +3,7 @@ image:
 
 tasks:
   - name: start-pulseaudio
-    command: |
-      pulseaudio -D -v
-      echo "load-module module-native-protocol-unix auth-anonymous=1" >> ~/.config/pulse/default.pa
-      pulseaudio --kill && pulseaudio --start
+    command: pulseaudio -D -v && echo "load-module module-native-protocol-unix auth-anonymous=1" >> ~/.config/pulse/default.pa && pulseaudio --kill && pulseaudio --start
   - name: start-brave-browser
     command: brave-browser
   
