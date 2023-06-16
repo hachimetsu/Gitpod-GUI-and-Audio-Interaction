@@ -3,7 +3,7 @@ image:
 
 tasks:
   - name: start-pulseaudio
-    init: pulseaudio -D -v && pulseaudio
+    init: pulseaudio -D -v
   - name: start-brave-browser
     command: brave-browser
   
