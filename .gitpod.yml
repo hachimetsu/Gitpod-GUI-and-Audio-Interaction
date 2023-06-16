@@ -2,6 +2,8 @@ image:
     file: .gitpod.Dockerfile  
 
 tasks:
+  - name: start-pulseaudio
+    init: pulseaudio -D -v && pulseaudio
   - name: start-brave-browser
     command: brave-browser
   

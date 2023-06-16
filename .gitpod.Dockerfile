@@ -1,12 +1,7 @@
 FROM gitpod/workspace-full-vnc
 SHELL ["/bin/bash", "-c"]
 
-# Install PulseAudio
 USER root
-RUN apt update -y && apt upgrade -y \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y pulseaudio \
-    && apt-get clean
-
 # Install Brave browser or any other browser you prefer
 RUN wget -qO - https://brave-browser-apt-release.s3.brave.com/brave-core.asc | gpg --dearmor > brave-keyring.gpg \
     && install -o root -g root -m 644 brave-keyring.gpg /usr/share/keyrings/ \
@@ -15,18 +10,7 @@ RUN wget -qO - https://brave-browser-apt-release.s3.brave.com/brave-core.asc | g
     && apt install -y brave-browser \
     && apt-get clean
 
-# Misc dependencies
-RUN apt-get install -y \
-  libasound2-dev \
-  libgtk-3-dev \
-  libnss3-dev \
-  fonts-noto \
-  fonts-noto-cjk
-
-# For Qt WebEngine on Docker
-ENV QTWEBENGINE_DISABLE_SANDBOX 1
-    
-# Configure PulseAudio
-RUN mkdir -p ~/.config/pulse/
-RUN echo "default-server = unix:/tmp/pulseaudio.socket" > ~/.config/pulse/client.conf
-ENV PULSE_SERVER unix:/tmp/pulseaudio.socket
+# Install pavucontrol
+RUN apt-get install pavucontrol \
+    && apt update -y \
+    && apt-get clean
