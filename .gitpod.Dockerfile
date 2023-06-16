@@ -37,7 +37,6 @@ RUN apt-get update && \
     
 # Configure PulseAudio
 USER gitpod
-RUN mkdir -p /home/gitpod/.config/pulse/
 RUN echo "default-server = unix:/tmp/pulseaudio.socket" > /home/gitpod/.config/pulse/client.conf
 ENV PULSE_SERVER=unix:/tmp/pulseaudio.socket
 

@@ -3,13 +3,10 @@ image:
 
 tasks:
   - name: pluseAudio
-    init: pulseaudio --start
+    init:  mkdir -p /home/gitpod/.config/pulse/ && pulseaudio -D -v
     command: brave-browser
   
 ports:
   - name: vncServer
     port: 6080
     onOpen: open-preview
-  - name: pulseAudio
-    port : 5900
-    onOpen: ignore
