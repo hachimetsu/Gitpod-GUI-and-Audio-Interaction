@@ -2,11 +2,10 @@ image:
     file: .gitpod.Dockerfile  
 
 tasks:
-  - name: pluseAudio
-    init:  mkdir -p /home/gitpod/.config/pulse/ && pulseaudio -D -v
+  - name: start-brave-browser
     command: brave-browser
   
 ports:
-  - name: vncServer
+  - name: vnc-server
     port: 6080
     onOpen: open-preview
