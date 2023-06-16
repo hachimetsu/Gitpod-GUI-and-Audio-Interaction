@@ -14,3 +14,13 @@ RUN wget -qO - https://brave-browser-apt-release.s3.brave.com/brave-core.asc | g
 RUN apt-get install -y pavucontrol \
     && apt update -y \
     && apt-get clean
+
+# Initialize pulseaudio and retrieve the unique hexadecimal string
+RUN pulseaudio -D -v \
+    && pulseaudio --kill \
+    && apt update -y \
+    && UNIQUE_HEX=$(ls ~/.config/pulse/ | grep -o '^[0-9a-f]*') \
+    && echo "load-module module-native-protocol-unix auth-anonymous=1" >> ~/.config/pulse/"$UNIQUE_HEX-default.pa" \
+    && apt-get clean
+
+        
