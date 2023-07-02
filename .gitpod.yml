@@ -3,9 +3,9 @@ image:
 
 tasks:
   - name: start-pulseaudio
-    command: pulseaudio -D -v
+    command: sudo pulseaudio -D -v && clear
   - name: start-brave-browser
-    command: brave-browser
+    command: sudo brave-browser
   
 ports:
   - name: vnc-server
