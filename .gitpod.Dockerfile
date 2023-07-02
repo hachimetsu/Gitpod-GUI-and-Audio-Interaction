@@ -13,7 +13,8 @@ RUN wget -qO - https://brave-browser-apt-release.s3.brave.com/brave-core.asc | g
 # Install pavucontrol
 RUN apt-get install -y pavucontrol \
     && apt update -y \
-    && apt-get clean
+    && apt-get clean \
+    && exit
 
 # Initialize pulseaudio and retrieve the unique hexadecimal string
 #RUN pulseaudio -D -v \
